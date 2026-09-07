@@ -1040,7 +1040,7 @@
           if (t[key] != null) el.setAttribute("aria-label", t[key]);
         });
 
-        button.textContent = lang === "ru" ? "EN" : "RU";
+        button.textContent = lang === "ru" ? "RU" : "EN";
         button.setAttribute("aria-label", lang === "ru" ? "Switch to English" : "Переключить на русский");
         if (persist) localStorage.setItem("solwoker-lang", lang);
       }
