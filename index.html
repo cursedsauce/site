@@ -3,39 +3,104 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Solwoker official page" />
-  <title>Solwoker Website</title>
+  <title>Solwoker — Music, Releases & Official Socials</title>
+  <meta name="description" content="Solwoker official website — music, releases and socials. Listen to Distance Falling and Heartcore, and find YouTube, Instagram, Twitch, TikTok and Telegram." />
+  <meta name="author" content="Solwoker" />
+  <meta name="application-name" content="Solwoker" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="color-scheme" content="dark" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Solwoker" />
+  <meta property="og:title" content="Solwoker — Music, Releases & Official Socials" />
+  <meta property="og:description" content="Official website of Solwoker — artist and creator. Music, releases and official social links." />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="https://solwoker.com/" />
+
+  <link rel="canonical" href="https://solwoker.com/" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Solwoker — Music, Releases & Official Socials" />
+  <meta name="twitter:description" content="Official website of Solwoker — artist and creator. Music, releases and official social links." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Inter:wght@800;900&amp;display=swap" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://solwoker.com/#solwoker",
+        "name": "Solwoker",
+        "alternateName": "@solwoker",
+        "description": "Artist and creator",
+        "sameAs": [
+          "https://www.youtube.com/@solwoker",
+          "https://www.instagram.com/solwoker_/",
+          "https://www.twitch.tv/solwokers",
+          "https://www.tiktok.com/@solwoker",
+          "https://t.me/solwoker",
+          "https://soundcloud.com/solwokers"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "name": "Solwoker",
+        "description": "Official website of Solwoker — music, releases and social links.",
+        "url": "https://solwoker.com/",
+        "about": { "@id": "https://solwoker.com/#solwoker" }
+      },
+      {
+        "@type": "MusicRecording",
+        "name": "Distance Falling",
+        "duration": "PT1M38S",
+        "byArtist": { "@id": "https://solwoker.com/#solwoker" }
+      },
+      {
+        "@type": "MusicRecording",
+        "name": "Heartcore",
+        "duration": "PT1M32S",
+        "url": "https://soundcloud.com/solwokers/heartcore",
+        "byArtist": { "@id": "https://solwoker.com/#solwoker" }
+      }
+    ]
+  }
+  </script>
+
 
   <style>
-    @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@800;900&display=swap");
 
     :root {
       --bg: #000;
       --fg: #fff;
       --line: rgba(255,255,255,.28);
+      --line-strong: rgba(255,255,255,.72);
       --muted: rgba(255,255,255,.58);
+      --dim: rgba(255,255,255,.36);
       --pad: clamp(1rem, 2vw, 2rem);
       --mono: "IBM Plex Mono", monospace;
       --sans: "Inter", Arial, Helvetica, sans-serif;
     }
 
-    * {
-      box-sizing: border-box;
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--bg);
     }
 
-    html,
     body {
       margin: 0;
-      min-height: 100%;
+      min-height: 100svh;
       background: var(--bg);
       color: var(--fg);
-    }
-
-    body {
-      min-height: 100svh;
-      overflow: hidden;
       font-family: var(--sans);
       cursor: default;
+      overflow-x: hidden;
     }
 
     body::before {
@@ -45,14 +110,13 @@
       z-index: 100;
       pointer-events: none;
       opacity: .14;
-      background:
-        repeating-linear-gradient(
-          to bottom,
-          rgba(255,255,255,.10) 0,
-          rgba(255,255,255,.10) 1px,
-          transparent 1px,
-          transparent 4px
-        );
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,.10) 0,
+        rgba(255,255,255,.10) 1px,
+        transparent 1px,
+        transparent 4px
+      );
     }
 
     body::after {
@@ -61,23 +125,21 @@
       inset: 0;
       z-index: 101;
       pointer-events: none;
-      background:
-        linear-gradient(
-          to bottom,
-          transparent 0 18%,
-          rgba(255,255,255,.14) 18% 18.35%,
-          transparent 18.35% 63%,
-          rgba(255,255,255,.09) 63% 63.5%,
-          transparent 63.5%
-        );
+      background: linear-gradient(
+        to bottom,
+        transparent 0 18%,
+        rgba(255,255,255,.14) 18% 18.35%,
+        transparent 18.35% 63%,
+        rgba(255,255,255,.09) 63% 63.5%,
+        transparent 63.5%
+      );
       opacity: 0;
       animation: signal-cut 2.8s steps(1, end) infinite;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    ::selection { background: #fff; color: #000; }
+
+    a { color: inherit; text-decoration: none; }
 
     .header,
     .footer {
@@ -89,11 +151,11 @@
       grid-template-columns: 1fr auto 1fr;
       align-items: center;
       padding-inline: var(--pad);
-      font-family: var(--mono);
-      font-size: .67rem;
+      font: 400 .67rem/1 var(--mono);
       letter-spacing: .05em;
       text-transform: uppercase;
-      background: #000;
+      background: rgba(0,0,0,.96);
+      backdrop-filter: blur(7px);
     }
 
     .header {
@@ -110,31 +172,65 @@
 
     .logo {
       justify-self: start;
-      font-family: var(--mono);
-      font-weight: 400;
+      font: 400 .67rem/1 var(--mono);
       letter-spacing: .05em;
-      font-size: .67rem;
       text-transform: uppercase;
     }
 
     .header-center,
-    .footer-center {
-      color: var(--muted);
-    }
+    .footer-center { color: var(--muted); }
 
     .header-right,
-    .footer-right {
-      justify-self: end;
+    .footer-right { justify-self: end; }
+
+    .header-center {
+      display: flex;
+      gap: 1.1rem;
     }
 
+    .header-center a,
+    .footer-right a {
+      position: relative;
+      transition: opacity .15s ease;
+    }
+
+    .header-center a::after,
+    .footer-right a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: -4px;
+      height: 1px;
+      background: #fff;
+      transition: right .15s ease;
+    }
+
+    .header-center a:hover::after,
+    .footer-right a:hover::after { right: 0; }
+
     main {
+      width: 100%;
+      padding-bottom: calc(3.8rem + 5rem);
+    }
+
+    .hero {
       min-height: 100svh;
       display: grid;
       place-items: center;
-      padding:
-        calc(4.4rem + var(--pad))
-        var(--pad)
-        calc(3.8rem + var(--pad));
+      padding: calc(4.4rem + var(--pad)) var(--pad) calc(3.8rem + var(--pad));
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-inner { width: 100%; }
+
+    .eyebrow {
+      margin: 0 0 1.25rem;
+      text-align: center;
+      color: var(--muted);
+      font: 400 .7rem/1.5 var(--mono);
+      letter-spacing: .12em;
+      text-transform: uppercase;
     }
 
     .title-wrap {
@@ -156,13 +252,11 @@
       will-change: transform, clip-path;
     }
 
-    h1 span {
-      display: block;
-    }
+    h1 span { display: block; }
 
     h1::before,
     h1::after {
-      content: "СКОРО";
+      content: attr(data-text);
       white-space: pre;
       position: absolute;
       inset: 0;
@@ -205,160 +299,530 @@
       background: rgba(255,255,255,.38);
     }
 
-    .tear::before {
-      height: 3px;
-      top: -9px;
+    .tear::before { height: 3px; top: -9px; }
+    .tear::after { height: 2px; top: 17px; }
+
+    .hero-meta {
+      width: min(100%, 56rem);
+      margin: 2.2rem auto 0;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 1rem;
+      align-items: center;
+      color: var(--muted);
+      font: 400 .67rem/1.5 var(--mono);
+      letter-spacing: .08em;
+      text-transform: uppercase;
     }
 
-    .tear::after {
-      height: 2px;
-      top: 17px;
+    .hero-meta span:last-child { text-align: right; }
+    .hero-meta i {
+      width: 4rem;
+      height: 1px;
+      background: var(--line-strong);
+      display: block;
+    }
+
+    .section {
+      width: 100%;
+      padding: clamp(4rem, 8vw, 8rem) var(--pad);
+      border-bottom: 1px solid var(--line);
+      scroll-margin-top: 4.4rem;
+    }
+
+    .section-head {
+      width: min(100%, 78rem);
+      margin: 0 auto clamp(1.8rem, 4vw, 3.6rem);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 1rem;
+    }
+
+    .section-kicker {
+      margin: 0 0 .65rem;
+      color: var(--muted);
+      font: 400 .65rem/1.5 var(--mono);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(2.2rem, 6vw, 5.8rem);
+      line-height: .9;
+      letter-spacing: .035em;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+
+    .section-count {
+      color: var(--muted);
+      font: 400 .68rem/1 var(--mono);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .rows {
+      width: min(100%, 78rem);
+      margin: 0 auto;
+      border-top: 1px solid var(--line);
+    }
+
+    .row {
+      min-height: 6.4rem;
+      display: grid;
+      grid-template-columns: 4rem minmax(0, 1fr) minmax(11rem, .58fr);
+      gap: 1rem;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+      isolation: isolate;
+    }
+
+    a.row {
+      transition: color .12s steps(1, end), padding .12s ease;
+    }
+
+    a.row::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background: #fff;
+      transform: scaleX(0);
+      transform-origin: right center;
+      transition: transform .18s cubic-bezier(.2,.7,.2,1);
+    }
+
+    /* Controlled hover glitch: short signal tears, no constant button shaking. */
+    a.row::after {
+      content: "";
+      position: absolute;
+      z-index: 3;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0;
+      background:
+        linear-gradient(
+          to bottom,
+          transparent 0 18%,
+          rgba(0,0,0,.92) 18% 20%,
+          transparent 20% 47%,
+          rgba(255,255,255,.78) 47% 49%,
+          transparent 49% 74%,
+          rgba(0,0,0,.82) 74% 76%,
+          transparent 76%
+        );
+      mix-blend-mode: difference;
+      will-change: transform, clip-path, opacity;
+    }
+
+    a.row:hover,
+    a.row:focus-visible {
+      color: #000;
+      padding-inline: .9rem;
+      outline: none;
+    }
+
+    a.row:hover::before,
+    a.row:focus-visible::before {
+      transform: scaleX(1);
+      transform-origin: left center;
+    }
+
+    a.row:hover::after,
+    a.row:focus-visible::after {
+      animation: row-signal-tear .82s steps(1, end) infinite;
+    }
+
+    a.row:hover .row-index,
+    a.row:hover .row-meta,
+    a.row:hover .row-title small,
+    a.row:focus-visible .row-index,
+    a.row:focus-visible .row-meta,
+    a.row:focus-visible .row-title small { color: rgba(0,0,0,.62); }
+
+    a.row:hover .row-title,
+    a.row:focus-visible .row-title {
+      animation: row-title-slice .82s steps(1, end) infinite;
+      text-shadow: -1px 0 rgba(255,255,255,.8), 1px 0 rgba(0,0,0,.35);
+      will-change: transform, clip-path;
+    }
+
+    a.row:hover .row-index,
+    a.row:hover .row-meta,
+    a.row:focus-visible .row-index,
+    a.row:focus-visible .row-meta {
+      animation: row-meta-cut .82s steps(1, end) infinite;
+    }
+
+    .row-index,
+    .row-meta {
+      font-family: var(--mono);
+      text-transform: uppercase;
+      transition: color .12s steps(1, end);
+    }
+
+    .row-index {
+      color: var(--dim);
+      font-size: .65rem;
+      letter-spacing: .08em;
+    }
+
+    .row-title {
+      min-width: 0;
+      overflow-wrap: anywhere;
+      font-size: clamp(1.35rem, 3.2vw, 2.8rem);
+      line-height: .95;
+      text-transform: uppercase;
+      font-weight: 900;
+      letter-spacing: .025em;
+    }
+
+    .row-title small {
+      display: block;
+      margin-top: .55rem;
+      color: var(--muted);
+      font: 400 .65rem/1.4 var(--mono);
+      letter-spacing: .05em;
+      text-transform: none;
+    }
+
+    .row-meta {
+      color: var(--muted);
+      font-size: .66rem;
+      line-height: 1.5;
+      letter-spacing: .06em;
+      text-align: right;
+    }
+
+    .track-row {
+      padding-block: 1.35rem;
+    }
+
+    .platforms {
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: .45rem;
+    }
+
+    .platform-link {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      min-height: 2rem;
+      padding: .5rem .65rem;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font: 400 .61rem/1 var(--mono);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      transition: background .12s steps(1, end), color .12s steps(1, end), border-color .12s steps(1, end);
+    }
+
+    .platform-link::before,
+    .platform-link::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    .platform-link::before {
+      z-index: -1;
+      background: #fff;
+      opacity: 1;
+      transform: scaleX(0);
+      transform-origin: right center;
+      transition: transform .13s steps(2, end);
+    }
+
+    .platform-link::after {
+      z-index: 2;
+      background: linear-gradient(
+        to bottom,
+        transparent 0 28%,
+        rgba(255,255,255,.95) 28% 34%,
+        transparent 34% 61%,
+        rgba(0,0,0,.95) 61% 67%,
+        transparent 67%
+      );
+      mix-blend-mode: difference;
+      will-change: transform, clip-path, opacity;
+    }
+
+    .platform-link:hover,
+    .platform-link:focus-visible {
+      color: #000;
+      border-color: #fff;
+      outline: none;
+      animation: platform-text-cut .68s steps(1, end) infinite;
+      text-shadow: -1px 0 rgba(255,255,255,.8), 1px 0 rgba(0,0,0,.35);
+    }
+
+    .platform-link:hover::before,
+    .platform-link:focus-visible::before {
+      transform: scaleX(1);
+      transform-origin: left center;
+    }
+
+    .platform-link:hover::after,
+    .platform-link:focus-visible::after {
+      animation: platform-signal-tear .68s steps(1, end) infinite;
+    }
+
+    .about-grid {
+      width: min(100%, 78rem);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(16rem, .8fr);
+      gap: clamp(2rem, 7vw, 7rem);
+      border-top: 1px solid var(--line);
+      padding-top: 2rem;
+    }
+
+    .about-copy {
+      margin: 0;
+      max-width: 18ch;
+      font-size: clamp(1.7rem, 4.2vw, 4.2rem);
+      line-height: .98;
+      letter-spacing: -.025em;
+      text-transform: uppercase;
+      font-weight: 900;
+    }
+
+    .about-facts {
+      margin: 0;
+      display: grid;
+      border-top: 1px solid var(--line);
+    }
+
+    .fact {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--line);
+      font: 400 .66rem/1.5 var(--mono);
+      letter-spacing: .055em;
+      text-transform: uppercase;
+    }
+
+    .fact dt { color: var(--muted); }
+    .fact dd {
+      margin: 0;
+      max-width: 26rem;
+      text-align: right;
+      overflow-wrap: anywhere;
+    }
+
+
+    @keyframes row-signal-tear {
+      0%, 17%, 27%, 58%, 68%, 100% {
+        opacity: 0;
+        transform: translateX(0);
+        clip-path: inset(0);
+      }
+      18% {
+        opacity: .65;
+        transform: translateX(-10px);
+        clip-path: inset(16% 0 61% 0);
+      }
+      19% {
+        opacity: .28;
+        transform: translateX(13px);
+        clip-path: inset(43% 0 39% 0);
+      }
+      20% {
+        opacity: .52;
+        transform: translateX(-5px);
+        clip-path: inset(70% 0 13% 0);
+      }
+      59% {
+        opacity: .36;
+        transform: translateX(7px);
+        clip-path: inset(33% 0 52% 0);
+      }
+      60% {
+        opacity: .18;
+        transform: translateX(-4px);
+        clip-path: inset(76% 0 11% 0);
+      }
+    }
+
+    @keyframes row-title-slice {
+      0%, 17%, 22%, 58%, 62%, 100% {
+        transform: translateX(0);
+        clip-path: inset(0);
+      }
+      18% {
+        transform: translateX(-4px);
+        clip-path: inset(0 0 63% 0);
+      }
+      19% {
+        transform: translateX(5px);
+        clip-path: inset(38% 0 34% 0);
+      }
+      20% {
+        transform: translateX(-2px);
+        clip-path: inset(72% 0 0 0);
+      }
+      59% { transform: translateX(2px); }
+      60% { transform: translateX(-2px); }
+      61% { transform: translateX(0); }
+    }
+
+    @keyframes row-meta-cut {
+      0%, 17%, 22%, 58%, 62%, 100% { transform: translateX(0); opacity: 1; }
+      18% { transform: translateX(3px); opacity: .45; }
+      19% { transform: translateX(-2px); opacity: .8; }
+      20% { transform: translateX(0); opacity: 1; }
+      59% { opacity: .55; }
+      60% { opacity: 1; }
+    }
+
+    @keyframes platform-signal-tear {
+      0%, 20%, 31%, 69%, 79%, 100% {
+        opacity: 0;
+        transform: translateX(0);
+        clip-path: inset(0);
+      }
+      21% {
+        opacity: .58;
+        transform: translateX(-5px);
+        clip-path: inset(14% 0 55% 0);
+      }
+      22% {
+        opacity: .25;
+        transform: translateX(6px);
+        clip-path: inset(55% 0 18% 0);
+      }
+      70% {
+        opacity: .34;
+        transform: translateX(4px);
+        clip-path: inset(36% 0 40% 0);
+      }
+      71% {
+        opacity: .16;
+        transform: translateX(-3px);
+        clip-path: inset(71% 0 10% 0);
+      }
+    }
+
+    @keyframes platform-text-cut {
+      0%, 20%, 25%, 69%, 73%, 100% { transform: translateX(0); }
+      21% { transform: translateX(-2px); }
+      22% { transform: translateX(2px); }
+      23% { transform: translateX(0); }
+      70% { transform: translateX(1px); }
+      71% { transform: translateX(-1px); }
+      72% { transform: translateX(0); }
     }
 
     @keyframes hard-jump {
-      0%, 72%, 76%, 100% {
-        transform: translate(0, 0);
-        clip-path: inset(0);
-      }
-
-      73% {
-        transform: translate(-14px, 0);
-        clip-path: inset(0 0 66% 0);
-      }
-
-      74% {
-        transform: translate(18px, 0);
-        clip-path: inset(36% 0 22% 0);
-      }
-
-      75% {
-        transform: translate(-6px, 0);
-        clip-path: inset(69% 0 0 0);
-      }
-
-      89% {
-        transform: translate(0, 0);
-      }
-
-      90% {
-        transform: translate(7px, -1px);
-      }
-
-      91% {
-        transform: translate(-11px, 1px);
-      }
-
-      92% {
-        transform: translate(0, 0);
-      }
+      0%, 72%, 76%, 100% { transform: translate(0, 0); clip-path: inset(0); }
+      73% { transform: translate(-14px, 0); clip-path: inset(0 0 66% 0); }
+      74% { transform: translate(18px, 0); clip-path: inset(36% 0 22% 0); }
+      75% { transform: translate(-6px, 0); clip-path: inset(69% 0 0 0); }
+      89% { transform: translate(0, 0); }
+      90% { transform: translate(7px, -1px); }
+      91% { transform: translate(-11px, 1px); }
+      92% { transform: translate(0, 0); }
     }
 
     @keyframes slice-a {
-      0%, 83%, 87%, 100% {
-        opacity: 0;
-        transform: translateX(0);
-      }
-
-      84% {
-        opacity: .65;
-        transform: translateX(-24px);
-      }
-
-      85% {
-        opacity: .32;
-        transform: translateX(16px);
-      }
-
-      86% {
-        opacity: .7;
-        transform: translateX(-9px);
-      }
+      0%, 83%, 87%, 100% { opacity: 0; transform: translateX(0); }
+      84% { opacity: .65; transform: translateX(-24px); }
+      85% { opacity: .32; transform: translateX(16px); }
+      86% { opacity: .7; transform: translateX(-9px); }
     }
 
     @keyframes slice-b {
-      0%, 63%, 67%, 100% {
-        opacity: 0;
-        transform: translateX(0);
-      }
-
-      64% {
-        opacity: .48;
-        transform: translateX(20px);
-      }
-
-      65% {
-        opacity: .22;
-        transform: translateX(-31px);
-      }
-
-      66% {
-        opacity: .62;
-        transform: translateX(11px);
-      }
+      0%, 63%, 67%, 100% { opacity: 0; transform: translateX(0); }
+      64% { opacity: .48; transform: translateX(20px); }
+      65% { opacity: .22; transform: translateX(-31px); }
+      66% { opacity: .62; transform: translateX(11px); }
     }
 
     @keyframes hard-tear {
-      0%, 68%, 72%, 100% {
-        opacity: 0;
-        transform: translateX(0);
-      }
-
-      69% {
-        opacity: .95;
-        transform: translateX(-9%);
-      }
-
-      70% {
-        opacity: .45;
-        transform: translateX(13%);
-      }
-
-      71% {
-        opacity: .85;
-        transform: translateX(-4%);
-      }
+      0%, 68%, 72%, 100% { opacity: 0; transform: translateX(0); }
+      69% { opacity: .95; transform: translateX(-9%); }
+      70% { opacity: .45; transform: translateX(13%); }
+      71% { opacity: .85; transform: translateX(-4%); }
     }
 
     @keyframes signal-cut {
-      0%, 92%, 95%, 100% {
-        opacity: 0;
-        transform: translateX(0);
+      0%, 92%, 95%, 100% { opacity: 0; transform: translateX(0); }
+      93% { opacity: .8; transform: translateX(-18px); }
+      94% { opacity: .35; transform: translateX(23px); }
+    }
+
+    @media (max-width: 780px) {
+      .header,
+      .footer { grid-template-columns: 1fr auto; }
+
+      .header-center,
+      .footer-center { display: none; }
+
+      h1 { font-size: clamp(3rem, 15vw, 6rem); }
+
+      .hero-meta { grid-template-columns: 1fr auto; }
+      .hero-meta i { display: none; }
+      .hero-meta span:last-child { text-align: right; }
+
+      .row {
+        min-height: 0;
+        grid-template-columns: 2.2rem minmax(0, 1fr);
+        gap: .75rem;
+        padding: 1.25rem 0;
       }
 
-      93% {
-        opacity: .8;
-        transform: translateX(-18px);
+      .row-meta,
+      .platforms {
+        grid-column: 2;
+        margin-top: -.25rem;
+        text-align: left;
+        justify-content: flex-start;
       }
 
-      94% {
-        opacity: .35;
-        transform: translateX(23px);
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
       }
     }
 
-    @media (max-width: 700px) {
-      .header,
-      .footer {
-        grid-template-columns: 1fr auto;
-      }
-
-      .header-center,
-      .footer-center {
-        display: none;
-      }
-
-      h1 {
-        font-size: clamp(3rem, 15vw, 6rem);
-      }
+    @media (max-width: 460px) {
+      .header-right { color: var(--muted); }
+      .hero-meta { grid-template-columns: 1fr; text-align: center; }
+      .hero-meta span:last-child { text-align: center; }
+      .section-head { grid-template-columns: 1fr; }
+      .section-count { display: none; }
+      .platform-link { flex: 1 1 calc(50% - .45rem); justify-content: center; }
     }
 
     @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
       body::after,
       h1,
       h1::before,
       h1::after,
-      .tear {
+      .tear { animation: none !important; }
+      a.row::before,
+      a.row,
+      a.row::after,
+      a.row .row-title,
+      a.row .row-index,
+      a.row .row-meta,
+      .platform-link,
+      .platform-link::after {
         animation: none !important;
+        transition: none !important;
       }
     }
   </style>
@@ -366,22 +830,225 @@
 
 <body>
   <header class="header">
-    <a class="logo" href="#" aria-label="Solwoker home">Solwoker</a>
-    <span class="header-right">192.168.1.1</span>
+    <a class="logo" href="#top" aria-label="Solwoker home">Solwoker</a>
+    <nav class="header-center" aria-label="Primary navigation">
+      <a href="#socials">Socials</a>
+      <a href="#music">Music</a>
+    </nav>
+    <span class="header-right"></span>
   </header>
 
-  <main>
-    <div class="title-wrap">
-      <h1>
-        <span>СКОРО</span>
-      </h1>
-      <div class="tear" aria-hidden="true"></div>
-    </div>
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <p class="eyebrow">Artist / Creator</p>
+        <div class="title-wrap">
+          <h1 id="hero-title" data-text="SOLWOKER"><span>SOLWOKER</span></h1>
+          <div class="tear" aria-hidden="true"></div>
+        </div>
+        <div class="hero-meta" aria-label="Artist summary">
+          <span>@solwoker</span>
+          <i aria-hidden="true"></i>
+          <span>music / socials / releases</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="socials" aria-labelledby="socials-title">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">01 / Network</p>
+          <h2 id="socials-title">Socials</h2>
+        </div>
+        <span class="section-count">05 channels</span>
+      </div>
+
+      <div class="rows" id="social-rows">
+        <a class="row" data-platform="youtube" aria-label="Solwoker official YouTube channel" href="https://www.youtube.com/@solwoker" target="_blank" rel="noopener noreferrer">
+          <span class="row-index">01</span>
+          <span class="row-title">YouTube<small>@solwoker</small></span>
+          <span class="row-meta">video / channel</span>
+        </a>
+
+        <a class="row" data-platform="instagram" aria-label="Solwoker official Instagram profile" href="https://www.instagram.com/solwoker_/" target="_blank" rel="noopener noreferrer">
+          <span class="row-index">02</span>
+          <span class="row-title">Instagram<small>@solwoker_</small></span>
+          <span class="row-meta">social / profile</span>
+        </a>
+
+        <a class="row" data-platform="twitch" aria-label="Solwoker official Twitch channel" href="https://www.twitch.tv/solwokers" target="_blank" rel="noopener noreferrer">
+          <span class="row-index">03</span>
+          <span class="row-title">Twitch<small>solwokers</small></span>
+          <span class="row-meta">live / channel</span>
+        </a>
+
+        <a class="row" data-platform="tiktok" aria-label="Solwoker official TikTok profile" href="https://www.tiktok.com/@solwoker" target="_blank" rel="noopener noreferrer">
+          <span class="row-index">04</span>
+          <span class="row-title">TikTok<small>@solwoker</small></span>
+          <span class="row-meta">video / profile</span>
+        </a>
+
+        <a class="row" data-platform="telegram" aria-label="Solwoker official Telegram channel" href="https://t.me/solwoker" target="_blank" rel="noopener noreferrer">
+          <span class="row-index">05</span>
+          <span class="row-title">Telegram Channel<small>@solwoker</small></span>
+          <span class="row-meta">channel / updates</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="music" aria-labelledby="music-title">
+      <div class="section-head">
+        <div>
+          <p class="section-kicker">02 / Audio archive</p>
+          <h2 id="music-title">Music</h2>
+        </div>
+        <span class="section-count">02 releases</span>
+      </div>
+
+      <div class="rows">
+        <article class="row track-row">
+          <span class="row-index">01</span>
+          <span class="row-title">Distance Falling<small>Solwoker / 2026 / 01:38</small></span>
+          <span class="platforms" aria-label="Listen to Distance Falling">
+            <a class="platform-link" data-service="spotify" href="https://open.spotify.com/search/Distance%20Falling%20Solwoker" target="_blank" rel="noopener noreferrer">Spotify</a>
+            <a class="platform-link" data-service="apple" href="https://music.apple.com/us/search?term=Distance%20Falling%20Solwoker" target="_blank" rel="noopener noreferrer">Apple Music</a>
+            <a class="platform-link" data-service="youtube-music" href="https://music.youtube.com/search?q=Distance%20Falling%20Solwoker" target="_blank" rel="noopener noreferrer">YouTube Music</a>
+            <a class="platform-link" data-service="soundcloud" href="https://soundcloud.com/search?q=Distance%20Falling%20Solwoker" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+          </span>
+        </article>
+
+        <article class="row track-row">
+          <span class="row-index">02</span>
+          <span class="row-title">Heartcore<small>Solwoker / Apostol / Mrazb / 2025 / 01:32</small></span>
+          <span class="platforms" aria-label="Listen to Heartcore">
+            <a class="platform-link" data-service="spotify" href="https://open.spotify.com/search/Heartcore%20Solwoker%20Apostol%20Mrazb" target="_blank" rel="noopener noreferrer">Spotify</a>
+            <a class="platform-link" data-service="apple" href="https://music.apple.com/us/search?term=Heartcore%20Solwoker%20Apostol%20Mrazb" target="_blank" rel="noopener noreferrer">Apple Music</a>
+            <a class="platform-link" data-service="youtube-music" href="https://music.youtube.com/search?q=Heartcore%20Solwoker%20Apostol%20Mrazb" target="_blank" rel="noopener noreferrer">YouTube Music</a>
+            <a class="platform-link" data-service="soundcloud" href="https://soundcloud.com/solwokers/heartcore" target="_blank" rel="noopener noreferrer">SoundCloud</a>
+          </span>
+        </article>
+      </div>
+    </section>
+
+
   </main>
 
   <footer class="footer">
     <span>© 2026 Solwoker</span>
-    <span class="footer-right"></span>
+    <span class="footer-center"></span>
+    <span class="footer-right">Official</span>
   </footer>
+
+  <script>
+    (() => {
+      const SOURCE_URL = "https://beacons.ai/solwoker";
+      const FALLBACK_URL = "https://api.allorigins.win/raw?url=" + encodeURIComponent(SOURCE_URL);
+
+      const selectors = {
+        youtube: 'a[data-platform="youtube"]',
+        instagram: 'a[data-platform="instagram"]',
+        twitch: 'a[data-platform="twitch"]',
+        tiktok: 'a[data-platform="tiktok"]',
+        telegram: 'a[data-platform="telegram"]'
+      };
+
+      const hostMap = [
+        ["youtube.com", "youtube"],
+        ["youtu.be", "youtube"],
+        ["instagram.com", "instagram"],
+        ["twitch.tv", "twitch"],
+        ["tiktok.com", "tiktok"],
+        ["t.me", "telegram"],
+        ["telegram.me", "telegram"]
+      ];
+
+      function cleanUrl(value) {
+        if (!value) return null;
+        const raw = String(value)
+          .replace(/\\u0026/g, "&")
+          .replace(/\\u003d/gi, "=")
+          .replace(/\\\//g, "/")
+          .replace(/&amp;/g, "&")
+          .trim();
+
+        try {
+          const url = new URL(raw, SOURCE_URL);
+          if (!/^https?:$/.test(url.protocol)) return null;
+          return url.href;
+        } catch (_) {
+          return null;
+        }
+      }
+
+      function collectUrls(html) {
+        const urls = new Set();
+        const doc = new DOMParser().parseFromString(html, "text/html");
+
+        doc.querySelectorAll("a[href]").forEach((a) => {
+          const url = cleanUrl(a.getAttribute("href"));
+          if (url) urls.add(url);
+        });
+
+        const normalized = html
+          .replace(/\\u0026/g, "&")
+          .replace(/\\u003d/gi, "=")
+          .replace(/\\\//g, "/");
+
+        (normalized.match(/https?:\/\/[^\s\"'<>\\]+/g) || []).forEach((raw) => {
+          const url = cleanUrl(raw);
+          if (url) urls.add(url);
+        });
+
+        return [...urls];
+      }
+
+      function applySocialLinks(urls) {
+        const lockedPlatforms = new Set(["instagram", "twitch", "tiktok"]);
+
+        for (const url of urls) {
+          let host;
+          try { host = new URL(url).hostname.toLowerCase().replace(/^www\./, ""); }
+          catch (_) { continue; }
+
+          const match = hostMap.find(([domain]) => host === domain || host.endsWith("." + domain));
+          if (!match) continue;
+
+          const platform = match[1];
+          if (lockedPlatforms.has(platform)) continue;
+
+          const element = document.querySelector(selectors[platform]);
+          if (element) element.href = url;
+        }
+      }
+
+      async function getText(url, timeout = 7000) {
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), timeout);
+        try {
+          const response = await fetch(url, {
+            cache: "no-store",
+            credentials: "omit",
+            signal: controller.signal
+          });
+          if (!response.ok) throw new Error(String(response.status));
+          return await response.text();
+        } finally {
+          clearTimeout(timer);
+        }
+      }
+
+      async function updateLinks() {
+        let html;
+        try {
+          html = await getText(SOURCE_URL);
+        } catch (_) {
+          html = await getText(FALLBACK_URL, 10000);
+        }
+        if (html) applySocialLinks(collectUrls(html));
+      }
+
+      updateLinks().catch(() => {});
+    })();
+  </script>
 </body>
 </html>
